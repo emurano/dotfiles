@@ -23,3 +23,8 @@ call plug#end()
 
 colorscheme gruvbox
 
+" Automatically add matching brace
+inoremap {<CR> {<CR>}<C-o>O
+
+" Tabstops
+set tabstop=3 softtabstop=0 expandtab shiftwidth=4 smarttab
