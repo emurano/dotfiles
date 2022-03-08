@@ -1,3 +1,6 @@
+set encoding=UTF-8
+
+
 " use 'jk' to go back to command mode
 inoremap jk <ESC>
 let mapleader = "'"
@@ -33,13 +36,6 @@ set exrc
 " Don't allow local rc files to execute :autocmd
 set secure
 
-
-" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-" f empty(glob(data_dir . '/autoload/plug.vim'))
-" silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" endif
-
 call plug#begin('~/.local/share/nvim/plugins')
 
 Plug 'gruvbox-community/gruvbox'
@@ -48,6 +44,12 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
+Plug 'udalov/kotlin-vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'sheerun/vim-polyglot'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -56,26 +58,22 @@ colorscheme gruvbox
 " Automatically add matching brace
 inoremap {<CR> {<CR>}<C-o>O
 
-" Automatically add matching double quote
-" inoremap {<CR> {<CR>}<C-o>O
-
 " Tabstops
 set tabstop=3 softtabstop=0 expandtab shiftwidth=3 smarttab
 set smartindent
 
-" Disable left arrow key
-" nnoremap <Left> :echo "No left for you!"<CR>
-" vnoremap <Left> :<C-u>echo "No left for you!"<CR>
-" inoremap <Left> <C-o>:echo "No left for you!"<CR>
-" nnoremap <Right> :echo "No right for you!"<CR>
-" vnoremap <Right> :<C-u>echo "No right for you!"<CR>
-" inoremap <Right> <C-o>:echo "No right for you!"<CR>
-" nnoremap <Down> :echo "No down for you!"<CR>
-" vnoremap <Down> :<C-u>echo "No down for you!"<CR>
-" inoremap <Down> <C-o>:echo "No down for you!"<CR>
-" nnoremap <Up> :echo "No up for you!"<CR>
-" vnoremap <Up> :<C-u>echo "No up for you!"<CR>
-" inoremap <Up> <C-o>:echo "No up for you!"<CR>
+" Disable Arrow keys in Normal mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 
 " File browsing using netrw
 " let g:netrw_banner=0
@@ -98,4 +96,14 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
+
+" open new split panes to right and below
+set splitright
+set splitbelow
+
 
