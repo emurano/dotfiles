@@ -1,4 +1,6 @@
 set encoding=UTF-8
+set conceallevel=3
+set guifont=1
 
 
 " use 'jk' to go back to command mode
@@ -47,9 +49,14 @@ Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
+" Plug 'ryanoasis/vim-devicons'
+" Plug 'scrooloose/nerdtree'
+" Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
+Plug 'ap/vim-buftabline'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -63,16 +70,16 @@ set tabstop=3 softtabstop=0 expandtab shiftwidth=3 smarttab
 set smartindent
 
 " Disable Arrow keys in Normal mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
 
 " Disable Arrow keys in Insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
 
 
 " File browsing using netrw
@@ -98,12 +105,34 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
-nmap <C-s> <Plug>MarkdownPreview
-nmap <M-s> <Plug>MarkdownPreviewStop
+" nmap <C-s> <Plug>MarkdownPreview
+" nmap <M-s> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " open new split panes to right and below
 set splitright
 set splitbelow
 
+" Nerdtree shortcuts
+nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+" let g:NERDTreeHijackNetrw=0
+
+
+filetype plugin on
+
+
+" buftabline
+nnoremap <C-M> :bnext<CR>
+nnoremap <C-N> :bprev<CR>
+
+" Nerdcommenter - Toggle comments using ctrl-/
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+
+set noshowmode
 

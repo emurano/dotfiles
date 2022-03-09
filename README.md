@@ -13,3 +13,11 @@ Add `.nvimrc` to the global ignore list for git.
 echo ".nvimrc" >> ~/.gitignore
 git config --global core.excludesFile '~/.gitignore'
 ```
+### Install Fonts for Icons
+
+The Nerdtree icons plugin uses a set of 'patched' fonts to show the icons.
+
+```
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+```
