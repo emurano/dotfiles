@@ -21,3 +21,9 @@ The Nerdtree icons plugin uses a set of 'patched' fonts to show the icons.
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 ```
+### Copy aliases file to the zsh custom directory
+
+```
+cp ~/dotfiles/zsh/aliases.zsh $ZSH_CUSTOM/
+```
+

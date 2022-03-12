@@ -47,8 +47,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'sheerun/vim-polyglot'
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" Plug 'sheerun/vim-polyglot'
+
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'scrooloose/nerdtree'
 " Plug 'preservim/nerdcommenter'
@@ -107,7 +109,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " nmap <C-s> <Plug>MarkdownPreview
 " nmap <M-s> <Plug>MarkdownPreviewStop
-nmap <C-p> <Plug>MarkdownPreviewToggle
+" nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " open new split panes to right and below
 set splitright
@@ -118,7 +120,7 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 " let g:NERDTreeHijackNetrw=0
 
