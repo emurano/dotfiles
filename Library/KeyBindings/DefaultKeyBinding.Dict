@@ -61,6 +61,4 @@ which is completely different.
     "\UF72C"   = "pageUp:";                                      /* PageUp       */
     "\UF72D"   = "pageDown:";                                    /* PageDown     */
 
-    "@$\UF702" = "moveWordBackwardAndModifySelection:";          /* Shift + Cmd  + Leftarrow */
-    "@$\UF703" = "moveWordForwardAndModifySelection:";           /* Shift + Cmd  + Rightarrow */
 }

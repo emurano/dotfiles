@@ -56,7 +56,7 @@ colorscheme gruvbox
 inoremap {<CR> {<CR>}<C-o>O
 
 " Tabstops
-set tabstop=3 softtabstop=0 expandtab shiftwidth=3 smarttab
+set tabstop=3 softtabstop=3 expandtab shiftwidth=3 smarttab
 set smartindent
 
 " Disable Arrow keys in Normal mode
@@ -130,4 +130,5 @@ set noshowmode
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
+let g:vim_json_conceal=0
 
