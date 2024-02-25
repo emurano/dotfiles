@@ -40,30 +40,16 @@ set exrc
 set secure
 
 call plug#begin('~/.local/share/nvim/plugins')
-
-Plug 'gruvbox-community/gruvbox'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-surround'
-Plug 'udalov/kotlin-vim'
-" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-" Plug 'sheerun/vim-polyglot'
-
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'scrooloose/nerdtree'
-" Plug 'preservim/nerdcommenter'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'preservim/nerdcommenter'
-Plug 'ap/vim-buftabline'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
+   source ~/.config/nvim/plugins.vim
 call plug#end()
+
+call sourcery#init()
+
+function! SourceryMappings()
+  nmap <buffer> gp <Plug>SourceryGoToRelatedPluginDefinition
+  nmap <buffer> gm <Plug>SourceryGoToRelatedMappings
+  nmap <buffer> gc <Plug>SourceryGoToRelatedConfig
+endfunction
 
 colorscheme gruvbox
 
@@ -71,7 +57,7 @@ colorscheme gruvbox
 inoremap {<CR> {<CR>}<C-o>O
 
 " Tabstops
-set tabstop=3 softtabstop=0 expandtab shiftwidth=3 smarttab
+set tabstop=3 softtabstop=3 expandtab shiftwidth=3 smarttab
 set smartindent
 
 " Disable Arrow keys in Normal mode
@@ -145,4 +131,5 @@ set noshowmode
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
+let g:vim_json_conceal=0
 

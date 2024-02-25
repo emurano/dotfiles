@@ -27,3 +27,15 @@ brew install --cask font-hack-nerd-font
 cp ~/dotfiles/zsh/aliases.zsh $ZSH_CUSTOM/
 ```
 
+### Copy the KeyBindings dictionary file
+
+To make Home and End keys work like they do on Windows, you will need to copy the key bindings file to the right location then reboot the laptop.
+
+```bash
+mkdir -p ~/Library/KeyBindings/ 
+cp ~/dotfiles/Library/KeyBindings/DefaultKeyBinding.Dict ~/Library/KeyBindings/DefaultKeyBinding.Dict
+```
+
+Then restart your computer. Home and Ends keys should work now.
+
+
