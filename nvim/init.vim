@@ -1,5 +1,6 @@
 set encoding=UTF-8
-set conceallevel=3
+"set conceallevel=3
+set conceallevel=0
 set guifont=1
 
 
@@ -107,7 +108,7 @@ set splitbelow
 nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 " let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 " let g:NERDTreeHijackNetrw=0
