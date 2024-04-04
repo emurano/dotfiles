@@ -10,3 +10,4 @@ https://github.com/cpow/neovim-for-newbs
 
 ctrl-p - find files (by file name)
 leader + fg - live grep (find in files)
+ctrl-n - show file browser/tree
